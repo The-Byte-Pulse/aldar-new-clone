@@ -1,7 +1,7 @@
 import { BuildingOffice2Icon, BuildingOfficeIcon, CameraIcon, PencilIcon, ShieldCheckIcon } from '@heroicons/react/16/solid'
 import React from 'react'
 
-const Profileheader = () => {
+const Profileheader = ({action}) => {
   return (
     <div className='bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex items-center justify-between'>
       
@@ -37,10 +37,11 @@ const Profileheader = () => {
              
           </div>
          </div>
-          <button className='px-4 py-3 flex items-center gap-1 rounded-xl border border-blue-900 text-blue-900 text-sm font-medium shadow-sm hover:bg-blue-200 transition-all duration-200'>
-            <PencilIcon className="w-5 h-5" />
-              <span>edit profile</span>
-          </button> 
+          {action && (
+        <div>
+          {action}
+        </div>
+      )}
     </div>
   )
 }
