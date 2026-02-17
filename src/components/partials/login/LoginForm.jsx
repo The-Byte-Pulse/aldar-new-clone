@@ -1,4 +1,5 @@
 import { Lock } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 const LoginForm = () => {
  
@@ -49,7 +50,7 @@ const LoginForm = () => {
             <div className="text-center">
                 <h2>
                     Don't have an account? 
-                    <a className="ps-1 text-accent font-medium cursor-pointer hover:underline transition duration-300">Register your company</a>
+                    <NavLink className="ps-1 text-accent font-medium cursor-pointer hover:underline transition duration-300" to="/registration">Register your company</NavLink>
                 </h2>
                 
             </div>

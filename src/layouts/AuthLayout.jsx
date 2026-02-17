@@ -16,8 +16,10 @@ const AuthLayout = ({ leftContent }) => {
             <p className=" font-open-sans text-gray-600">corporate portal</p>
           </div>
         </div>
-        <div className=" bg-primary lg:w-[90%] w-full min-h-full mx-auto rounded-xl block lg:flex  
-       md:w-[80%] md:p-4 p-0">
+        <div
+          className=" bg-primary lg:w-[90%] w-full min-h-full mx-auto rounded-xl block lg:flex  
+       md:w-[80%] md:p-4 p-0"
+        >
           <div className="relative z-10 bg-[url('/images/auth.webp')] bg-cover bg-center w-[50%] min-h-full rounded-xl  border-accent lg:flex items-center hidden ">
             <div className="absolute inset-0 bg-[#050e37a8] h-full rounded-xl"></div>
             {leftContent}

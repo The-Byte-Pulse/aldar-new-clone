@@ -5,6 +5,8 @@ import Otp from "../pages/authentication/Otp";
 import LoginLeft from "../components/partials/login/LoginLeft";
 import OtpLeft from "../components/partials/otp/OtpLeft";
 import { OtpProvider } from "../context/OtpContext";
+import RegistrationLayout from "../layouts/RegistrationLayout";
+import RegistrationInstruction from "../Pages/RegistrationInstruction";
 
 const AuthRoutes = [
   {
@@ -36,6 +38,18 @@ const AuthRoutes = [
       },
     ],
   },
+  {
+    path : "registration",
+    element : <RegistrationLayout/>,
+    children:[
+      {
+      index : true,
+      element : <RegistrationInstruction/>,
+      }
+
+
+    ]
+  }
 ];
 
 export default AuthRoutes;
