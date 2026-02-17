@@ -1,8 +1,13 @@
-import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 import DashboardLayout from "../layout/DashboardLayout";
 import Dashboard from "../pages/protected/Dashboard";
 import SettingPage from "../pages/SettingPage";
 import ProfilePage from "../pages/ProfilePage";
+import NotFound from "../pages/static/NotFound"; 
 
 const router = createBrowserRouter([
   {
@@ -14,16 +19,16 @@ const router = createBrowserRouter([
     element: <DashboardLayout />,
     children: [
       { index: true, element: <Dashboard /> },
-      { path: "profile", element: <ProfilePage /> },      
-      { path: "setting", element: <SettingPage /> },      
+      { path: "profile", element: <ProfilePage /> },
+      { path: "setting", element: <SettingPage /> },
     ],
   },
   {
     path: "*",
-    element: <h1>404 - Page Not Found</h1>,
+    element: <NotFound />, 
   },
 ]);
 
 export default function Routes() {
   return <RouterProvider router={router} />;
-}
+} 

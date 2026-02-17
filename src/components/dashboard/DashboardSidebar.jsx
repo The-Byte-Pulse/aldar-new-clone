@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { FiSettings, FiLogOut, FiUser } from "react-icons/fi";
 import SidebarMenuItem from "./SiderbarMenuItem";
-
+import { Link } from "react-router-dom";
 // Map labels to icons
 const iconMap = {
   "Dashboard": <LayoutDashboard size={20} />,
@@ -168,16 +168,28 @@ export default function Sidebar({ isOpen, setIsOpen, isCollapsed, user }) {
               </div>
             )}
           </div>
+            <Link
+            to="/dashboard/profile"
+            className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-(--bg-primary) transition"
+              >
+               {iconMap["My Profile"]}
+            {!isCollapsed && "My Profile"}
+          </Link>
+          <Link
+  to="/dashboard/setting"
+  className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-(--bg-primary) transition duration-200"
+>
+  {iconMap["Settings"]}
+  {!isCollapsed && <span>Settings</span>}
+</Link>
+          <button
+  // onClick={handleLogout}
+  className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-red-100 dark:hover:bg-red-900 text-red-500 transition duration-200"
+>
+  {iconMap["Logout"]}
+  {!isCollapsed && <span>Logout</span>}
+</button>
 
-          <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-(--bg-primary) transition">
-            {iconMap["My Profile"]} {!isCollapsed && "My Profile"}
-          </button>
-          <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-(--bg-primary) transition">
-            {iconMap["Settings"]} {!isCollapsed && "Settings"}
-          </button>
-          <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-red-100 dark:hover:bg-red-900 text-red-500 transition">
-            {iconMap["Logout"]} {!isCollapsed && "Logout"}
-          </button>
         </div>
       </aside>
     </>
