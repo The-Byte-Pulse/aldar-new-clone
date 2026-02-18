@@ -63,7 +63,7 @@ const RegistrationInstruction = () => {
        
       </div>
        <div className="flex  justify-center  my-4">
-           <a className="font-poppins bg-accent flex items-center gap-2 justify-center text-text_primary px-4 py-3 rounded-lg cursor-pointer">Start Registration <span><Icon icon="iconamoon:arrow-right-1" width="24" height="24" /></span></a>
+           <NavLink to="/register/create-account" className="font-poppins bg-accent flex items-center gap-2 justify-center text-text_primary px-4 py-3 rounded-lg cursor-pointer">Start Registration <span><Icon icon="iconamoon:arrow-right-1" width="24" height="24" /></span></NavLink>
           
            
         </div>
