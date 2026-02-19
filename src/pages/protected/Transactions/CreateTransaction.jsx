@@ -2,8 +2,9 @@ import { useState } from "react";
 import BeneficiaryCard from "../../../components/app/BeneficiaryCard";
 import beneficiaries from "../../../data/beneficiaries";
 import { User, DollarSign, CheckCircle } from "lucide-react";
-
-export default function NewTransaction() {
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+export default function CreateTransaction() {
 
   const [selected, setSelected] = useState(null);
   const [step, setStep] = useState(1);
@@ -20,13 +21,13 @@ export default function NewTransaction() {
   const handleNext = () => {
 
     if (step === 1 && !selected) {
-      alert("Please select a beneficiary first");
+      toast.error("Please select a beneficiary first");
       return;
     }
 
     if (step === 2) {
       if (!amount || amount <= 0 || !purpose || !paymentMethod || !transactionType) {
-        Message("Please fill all required fields correctly");
+        toast.warning("Please fill all required fields correctly");
         return;
       }
     }
@@ -40,7 +41,7 @@ export default function NewTransaction() {
 
   return (
     <div className="container-custom py-6">
-
+       <ToastContainer position="top-right" autoClose={3000} />
       {/* Stepper */}
       <div className="card mb-6 flex justify-between items-center">
 
@@ -185,12 +186,21 @@ export default function NewTransaction() {
               Back
             </button>
             <button
-              onClick={()=>alert("Transaction Sent!")}
+             onClick={() => toast.success("Transaction Sent Successfully!")}
               className="btn-primary flex-1"
             >
               Send Money
             </button>
           </div>
+         <ToastContainer
+  position="top-right"
+  autoClose={3000}
+  hideProgressBar={false}
+  newestOnTop
+  closeOnClick
+  pauseOnHover
+  theme="colored"
+/>
 
         </div>
       )}
