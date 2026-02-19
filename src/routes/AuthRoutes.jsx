@@ -8,7 +8,7 @@ import { OtpProvider } from "../context/OtpContext";
 import RegistrationLayout from "../layouts/RegistrationLayout";
 import RegistrationInstruction from "../Pages/RegistrationInstruction";
 import RegisterLayout from "../layouts/RegisterLayout";
-import CreateAccount from "../Pages/authentication/CreateAccount";
+import CreateAccount from "../Pages/registration/CreateAccount";
 
 const AuthRoutes = [
   {
