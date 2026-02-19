@@ -29,7 +29,7 @@ export default function ThemeSwitcher() {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="flex items-center gap-2 w-full px-3 py-2 rounded-lg hover:bg-[var(--bg-primary)] transition-all"
+      className="flex items-center gap-2 w-full px-3 py-2 rounded-lg hover:bg-(--bg-primary) transition-all"
     >
       {theme === "dark" ? <FaSun /> : <FaMoon />}
       {theme === "dark" ? "Light Mode" : "Dark Mode"}

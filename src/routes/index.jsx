@@ -3,11 +3,13 @@ import {
   RouterProvider,
   Navigate,
 } from "react-router-dom";
+
 import DashboardLayout from "../layout/DashboardLayout";
 import Dashboard from "../pages/protected/Dashboard";
 import SettingPage from "../pages/SettingPage";
 import ProfilePage from "../pages/ProfilePage";
 import NotFound from "../pages/static/NotFound"; 
+import CreateTransaction from "../pages/protected/Transactions/Create Tansaction"; 
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,7 @@ const router = createBrowserRouter([
       { index: true, element: <Dashboard /> },
       { path: "profile", element: <ProfilePage /> },
       { path: "setting", element: <SettingPage /> },
+      { path: "create", element: <CreateTransaction /> }, 
     ],
   },
   {
@@ -31,4 +34,4 @@ const router = createBrowserRouter([
 
 export default function Routes() {
   return <RouterProvider router={router} />;
-} 
+}
