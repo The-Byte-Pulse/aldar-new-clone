@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Profileheader from '../components/Profileheader'
-import Profiletabs from '../components/Profiletabs'
-import ProfileForm from '../components/ProfileForm'
+import Profileheader from '../components/profile-and-setting/Profileheader'
+import Profiletabs from '../components/profile-and-setting/Profiletabs'
+import ProfileForm from '../components/profile-and-setting/ProfileForm'
 import { PencilIcon } from '@heroicons/react/16/solid'
 
 const Profilepage = () => {
