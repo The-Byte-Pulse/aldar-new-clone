@@ -72,6 +72,7 @@ export default function Sidebar({ isOpen, setIsOpen, isCollapsed, user }) {
     { label: "Bank Accounts" },
     { label: "Card Payments" },
     { label: "Documents" },
+     { label: "Notifications" },
     { label: "WPS / Salary", subMenu: ["WPS Overview", "Upload Salary File", "Batch History"] },
     { label: "Reports", subMenu: ["All Reports", "Statements", "Free Reports", "E-Receipts"] },
     { label: "Support" },
@@ -141,7 +142,7 @@ export default function Sidebar({ isOpen, setIsOpen, isCollapsed, user }) {
         <div className="border-t border-(--border) p-3 space-y-2">
           <p className="text-xs uppercase text-(--text-secondary) px-2">Account</p>
 
-          <div className="relative" ref={notifRef}>
+          {/* <div className="relative" ref={notifRef}>
             <button
               onClick={() => setNotifOpen(!notifOpen)}
               className="relative w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-(--bg-primary) transition"
@@ -167,7 +168,7 @@ export default function Sidebar({ isOpen, setIsOpen, isCollapsed, user }) {
                 ))}
               </div>
             )}
-          </div>
+          </div> */}
             <Link
             to="/dashboard/profile"
             className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-(--bg-primary) transition"
