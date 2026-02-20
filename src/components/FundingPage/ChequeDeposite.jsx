@@ -11,8 +11,6 @@ import {
 const ChequeDeposite = () => {
   return (
     <div className="space-y-8">
-
-      {/* Info Alert */}
       <div className="flex items-start gap-3 bg-blue-50 border border-blue-300 text-blue-700 p-4 rounded-xl">
         <Info size={20} className="shrink-0 mt-0.5" />
         <p className="text-sm leading-relaxed">
@@ -20,11 +18,7 @@ const ChequeDeposite = () => {
           business days.
         </p>
       </div>
-
-      {/* Top Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-
-        {/* Cheque Requirements */}
         <div className="bg-gray-50 rounded-2xl p-5 sm:p-6 shadow-sm">
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mb-5">
             <h2 className="font-semibold text-base sm:text-lg">
@@ -44,8 +38,6 @@ const ChequeDeposite = () => {
             <RequirementItem text="Maximum amount: QAR 500,000 per cheque" />
           </ul>
         </div>
-
-        {/* Reference Code */}
         <div className="bg-amber-50 border border-amber-300 rounded-2xl p-5 sm:p-6 flex flex-col justify-center">
           <h3 className="text-gray-600 text-sm mb-3">
             Your Reference Code
@@ -63,8 +55,6 @@ const ChequeDeposite = () => {
           </div>
         </div>
       </div>
-
-      {/* Branch Locations */}
       <div className="bg-white rounded-2xl shadow overflow-hidden">
         <div className="px-5 sm:px-6 py-4 border-b">
           <h2 className="font-semibold text-base sm:text-lg">
@@ -73,8 +63,6 @@ const ChequeDeposite = () => {
         </div>
 
         <div className="px-5 sm:px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 hover:bg-gray-50 transition">
-
-          {/* Left Side */}
           <div className="flex items-start gap-4">
             <div className="bg-blue-100 p-3 rounded-xl shrink-0">
               <Building2 className="text-blue-700" size={20} />
@@ -87,8 +75,6 @@ const ChequeDeposite = () => {
               </p>
             </div>
           </div>
-
-          {/* Right Side */}
           <div className="flex items-center gap-2 text-gray-500 text-sm">
             <Clock size={16} />
             <span>9:00 AM - 6:00 PM</span>
@@ -100,8 +86,6 @@ const ChequeDeposite = () => {
     </div>
   );
 };
-
-/* Requirement Item Component */
 function RequirementItem({ text }) {
   return (
     <li className="flex items-start gap-3">

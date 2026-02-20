@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 const FundingHeader = () => {
   return (
     <div className="space-y-8">
-
-      {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
 
         <div>
@@ -23,11 +21,7 @@ const FundingHeader = () => {
         </Link>
 
       </div>
-
-      {/* Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-        {/* Available Balance */}
         <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white p-5 sm:p-6 rounded-2xl shadow-xl">
           <div className="flex justify-between items-center mb-4">
             <span className="text-xs sm:text-sm">
@@ -45,8 +39,6 @@ const FundingHeader = () => {
             <span className="font-medium">QAR 0.00</span>
           </p>
         </div>
-
-        {/* This Month */}
         <div className="bg-white p-5 sm:p-6 rounded-2xl shadow">
           <div className="flex justify-between items-center mb-4">
             <span className="text-xs sm:text-sm text-gray-600">
@@ -63,8 +55,6 @@ const FundingHeader = () => {
             +0.0% vs last month
           </p>
         </div>
-
-        {/* Transactions Today */}
         <div className="bg-white p-5 sm:p-6 rounded-2xl shadow">
           <div className="flex justify-between items-center mb-4">
             <span className="text-xs sm:text-sm text-gray-600">

@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Copy, Plus, AlertTriangle, Info } from "lucide-react";
+import FundingModal from "./FundingModal";
 
 const BankTransfer = () => {
+  const [open, setOpen] = useState(false);
   return (
     <div className="space-y-6">
-
-      {/* Info Alert */}
       <div className="flex items-start gap-3 bg-blue-50 border border-blue-300 text-blue-700 p-4 rounded-xl">
         <Info size={20} className="shrink-0 mt-0.5" />
         <p className="text-sm leading-relaxed">
@@ -13,23 +13,20 @@ const BankTransfer = () => {
           Funds typically reflect within 1-2 business days.
         </p>
       </div>
-
-      {/* Bank Details Card */}
       <div className="bg-gray-50 rounded-2xl p-4 sm:p-6 shadow-sm">
-
-        {/* Responsive Header */}
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-6">
           <h2 className="text-lg font-semibold">
             AI Dar Exchange Bank Details
           </h2>
 
-          <button className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium text-sm">
+          <button 
+           onClick={() => setOpen(true)}
+           className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium text-sm">
             <Plus size={16} />
             Create Funding Request
           </button>
+          <FundingModal isOpen={open} onClose={()=> setOpen(false)}/>
         </div>
-
-        {/* Responsive Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
           <DetailBox label="Bank Name" value="Emirates NBD" />
@@ -53,8 +50,6 @@ const BankTransfer = () => {
             label="SWIFT Code"
             value="EABORAE1XXX"
           />
-
-          {/* Reference Box */}
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
             <div className="min-w-0">
               <p className="text-xs text-gray-500">Reference</p>
@@ -70,8 +65,6 @@ const BankTransfer = () => {
 
         </div>
       </div>
-
-      {/* Important Alert */}
       <div className="flex items-start gap-3 bg-amber-100 border border-amber-400 text-amber-800 p-4 sm:p-5 rounded-xl">
         <AlertTriangle size={20} className="shrink-0 mt-0.5" />
         <div>
