@@ -112,7 +112,7 @@ export default function Documents() {
       <div className="space-y-3 mb-6">
         {/* Action Required */}
         <div className="p-4 rounded-xl bg-yellow-50 dark:bg-yellow-950 border border-yellow-200 dark:border-yellow-800 flex items-center gap-3">
-          <AlertTriangle className="text-yellow-600 flex-shrink-0" size={20} />
+          <AlertTriangle className="text-yellow-600 shrink-0" size={20} />
           <div>
             <h3 className="font-semibold text-yellow-800 dark:text-yellow-200">
               Action Required
@@ -125,7 +125,7 @@ export default function Documents() {
 
         {/* Expiring Documents */}
         <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 flex items-center gap-3">
-          <Info className="text-blue-600 flex-shrink-0" size={20} />
+          <Info className="text-blue-600 shrink-0" size={20} />
           <div>
             <h3 className="font-semibold text-blue-800 dark:text-blue-200">
               Expiring Documents
@@ -222,7 +222,7 @@ export default function Documents() {
             className="card hover:shadow-md transition flex items-center gap-4"
           >
             {/* Icon */}
-            <div className="p-3 rounded-lg bg-blue-100 dark:bg-blue-900 flex-shrink-0">
+            <div className="p-3 rounded-lg bg-blue-100 dark:bg-blue-900 shrink-0">
               <FileText className="text-blue-600" size={24} />
             </div>
 

@@ -18,7 +18,12 @@ import Reports from "../pages/protected/Reports/Reports";
 import FeeReports from "../pages/protected/Reports/FeeReports";
 import Support from "../pages/protected/Support/Support";
 import Documents from "../pages/protected/Documents/Documents";
+import WPSOverview from "../pages/protected/WPS Pages/WPSOverview";
+import UploadSalaryFile from "../pages/protected/WPS Pages/UploadSalaryFile";
+import BatchHistory from "../pages/protected/WPS Pages/BatchHistory";
+import AuthRoutes from "./AuthRoutes";
 const router = createBrowserRouter([
+  ...AuthRoutes,
   {
     path: "/",
     element: <Navigate to="/dashboard" />,
@@ -32,6 +37,11 @@ const router = createBrowserRouter([
       { path: "setting", element: <SettingPage /> },
       {path: "support", element: <Support/>},
       {path: "documents", element: <Documents/>},
+
+      // WPS routes
+      { path: "wps", element: <WPSOverview/> },
+      { path: "wps/upload-salary-file", element: <UploadSalaryFile/> },
+      { path: "wps/batch-history", element: <BatchHistory/> },
 
       // Transaction route
      {
@@ -51,6 +61,7 @@ const router = createBrowserRouter([
     {path: "free" , element: <FeeReports/>}
   ]
 },
+
 
     ],
   },
