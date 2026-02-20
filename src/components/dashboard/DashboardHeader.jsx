@@ -101,7 +101,7 @@ export default function Header({ user, toggleSidebar }) {
 
         {/* SETTINGS LINK */}
         <Link
-          to="/setting"
+          to="/dashboard/setting"
           className="p-2 rounded-lg hover:bg-(--bg-surface) transition-colors"
         >
           <FiSettings className="text-(--text-primary)" />
@@ -130,14 +130,14 @@ export default function Header({ user, toggleSidebar }) {
               <hr className="border-(--border) mb-2" />
 
               <Link
-                to="/profile"
+                to="/dashboard/profile"
                 className="flex items-center gap-2 w-full px-3 py-2 rounded-lg hover:bg-(--bg-primary)"
               >
                 <FiUser /> My Profile
               </Link>
 
               <Link
-                to="/setting"
+                to="/dashboard/setting"
                 className="flex items-center gap-2 w-full px-3 py-2 rounded-lg hover:bg-(--bg-primary)"
               >
                 <FiSettings /> Settings

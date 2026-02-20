@@ -1,24 +1,21 @@
-import { GlobeAltIcon, KeyIcon, ShieldExclamationIcon } from "@heroicons/react/16/solid";
+import { GlobeAltIcon, KeyIcon, ShieldExclamationIcon } from "@heroicons/react/16/solid"
 
 const Security = () => {
   return (
-    <div className="space-y-8 bg-(--bg-primary) p-4">
-
+    <div className="space-y-8 p-4 md:p-6">
       {/* Password Section */}
       <div>
-        <h3 className="text-lg font-bold text-(--text-primary) mb-4 px-2">
+        <h3 className="text-lg font-bold text-slate-900 mb-4 px-2 md:px-4">
           Password
         </h3>
 
-        <div className="rounded-2xl shadow-lg bg-(--bg-surface) border border-(--border) p-4 flex items-center justify-between">
+        <div className="rounded-2xl shadow-lg bg-slate-100 p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0">
           <div className="flex flex-col gap-1">
-            <h2 className="text-lg font-medium">Change Password</h2>
-            <p className="text-sm text-(--text-secondary)">
-              Last changed 30 days ago
-            </p>
+            <h2 className="text-lg font-sm">Change Password</h2>
+            <p className="text-sm text-slate-500">Last changed 30 days ago</p>
           </div>
 
-          <button className="flex items-center gap-1 text-blue-900 hover:bg-blue-100 font-semibold border rounded-xl transition-all px-3 py-2 duration-200">
+          <button className="flex items-center gap-1 text-blue-900 hover:bg-blue-100 font-semibold border rounded-xl transition-all px-3 py-2 duration-200 mt-2 sm:mt-0">
             <KeyIcon className="w-4 h-4" />
             Change Password
           </button>
@@ -27,21 +24,22 @@ const Security = () => {
 
       {/* Two-Factor Authentication */}
       <div>
-        <h3 className="text-lg font-bold text-(--text-primary) mb-4 px-2">
+        <h3 className="text-lg font-bold text-slate-900 mb-4 px-2 md:px-4">
           Two-Factor Authentication
         </h3>
 
-        <div className="bg-(--bg-surface) rounded-2xl shadow-sm border border-green-500 p-4 flex items-center justify-between">
+        <div className="bg-slate-100 rounded-2xl shadow-sm border border-green-500 p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0">
           <div className="flex items-start gap-3">
-            <div className="p-2 rounded-lg bg-green-100">
+            <div className="p-2 rounded-lg bg-green-100 flex-shrink-0">
               <ShieldExclamationIcon className="w-6 h-6 text-green-500" />
             </div>
             <div className="flex flex-col gap-1">
-              <h2 className="text-lg font-medium">Enable 2FA</h2>
-              <p className="text-sm text-(--text-secondary)">Using SMS verification</p>
+              <h2 className="text-lg font-sm">Enable 2FA</h2>
+              <p className="text-sm text-slate-500">Using SMS verification</p>
             </div>
           </div>
-          <button className="flex items-center gap-1 text-blue-900 hover:bg-blue-100 font-semibold border rounded-xl transition-all px-3 py-2 duration-200">
+
+          <button className="flex items-center gap-1 text-blue-900 hover:bg-blue-100 font-semibold border rounded-xl transition-all px-3 py-2 duration-200 mt-2 sm:mt-0">
             Manage
           </button>
         </div>
@@ -49,40 +47,46 @@ const Security = () => {
 
       {/* Login Sessions */}
       <div>
-        <h3 className="text-lg font-bold text-(--text-primary) mb-4 px-2">
-          Login Sessions
-        </h3>
+        <h3 className="text-lg font-bold text-slate-900 mb-4 px-2 md:px-4">Login Sessions</h3>
 
+        {/* Each Session Card */}
         {[
-          { device: "Windows PC - Chrome", location: "Dubai, UAE", status: "Active", time: "Current Session" },
-          { device: "iPhone 14 Pro - Safari", location: "Dubai, UAE", status: "Revoke", time: "2 hours ago" },
-          { device: "MacBook Pro - Chrome", location: "Abu Dhabi, UAE", status: "Revoke", time: "Yesterday" },
+          { device: "Windows PC - Chrome", location: "Dubai, UAE", time: "Current Session", status: "Active", active: true },
+          { device: "iPhone 14 Pro - Safari", location: "Dubai, UAE", time: "2 hours ago", status: "Revoke", active: false },
+          { device: "MacBook Pro - Chrome", location: "Abu Dhabi, UAE", time: "Yesterday", status: "Revoke", active: false },
         ].map((session, idx) => (
-          <div key={idx} className="bg-(--bg-surface) border border-(--border) rounded-2xl shadow-sm p-4 mb-3 flex items-center justify-between">
+          <div
+            key={idx}
+            className="bg-white sm:bg-white/100 rounded-2xl shadow-sm border border-slate-300 p-4 mb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-0"
+          >
             <div className="flex items-start gap-3">
-              <div className="bg-white p-2 rounded-lg border border-(--border)">
-                <GlobeAltIcon className="w-6 h-6 text-(--text-secondary)" />
+              <div className="bg-white p-2 rounded-lg border border-slate-600 flex-shrink-0">
+                <GlobeAltIcon className="w-6 h-6 text-slate-600" />
               </div>
               <div className="flex flex-col gap-1">
-                <h2 className="text-lg font-medium">{session.device}</h2>
-                <p className="text-sm text-(--text-secondary)">{session.location}</p>
+                <h2 className="text-lg font-sm">{session.device}</h2>
+                <p className="text-sm text-slate-500">{session.location}</p>
               </div>
             </div>
-            <div className="text-right flex flex-col items-end gap-1">
-              <p className="text-sm text-(--text-secondary)">{session.time}</p>
-              <span className={`text-xs font-medium px-2 py-1 rounded-full ${session.status === "Active" ? "bg-green-100 text-green-700" : "text-red-500"}`}>
+            <div className="flex flex-col items-start sm:items-end text-right gap-1 mt-2 sm:mt-0">
+              <p className="text-sm text-slate-600">{session.time}</p>
+              <span
+                className={`text-xs font-medium px-2 py-1 rounded-full ${
+                  session.active ? "bg-green-100 text-green-700" : "text-red-500"
+                }`}
+              >
                 {session.status}
               </span>
             </div>
           </div>
         ))}
 
-        <button className="flex items-center gap-1 text-blue-900 hover:bg-blue-100 font-semibold border rounded-xl transition-all px-3 py-3 duration-200 w-full mt-2">
+        <button className="flex items-center justify-center gap-1 text-blue-900 hover:bg-blue-100 font-semibold border rounded-xl transition-all px-3 py-3 duration-200 w-full sm:w-auto mt-2">
           Sign out all other Sessions
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Security;
+export default Security

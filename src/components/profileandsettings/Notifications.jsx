@@ -1,142 +1,86 @@
-import {
-  BellIcon,
-  EnvelopeIcon,
-  GlobeAltIcon,
-  LockClosedIcon,
-  PhoneArrowDownLeftIcon,
-} from "@heroicons/react/24/outline";
-import { useState } from "react";
+
+import { BellIcon, EnvelopeIcon, GlobeAltIcon, LockClosedIcon, PhoneArrowDownLeftIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react'
 
 const Notifications = () => {
-  const [notifications, setNotifications] = useState({
-    email: true,
-    sms: false,
-    transaction: true,
-    login: true,
-    marketing: false,
-  });
+  const cards = [
+    {
+      icon: <EnvelopeIcon className="w-6 h-6 text-blue-900" />,
+      iconBg: "bg-blue-100",
+      title: "Email Notifications",
+      description: "Receive notifications via email",
+    },
+    {
+      icon: <PhoneArrowDownLeftIcon className="w-6 h-6 text-green-700" />,
+      iconBg: "bg-blue-100",
+      title: "SMS Notifications",
+      description: "Receive notifications via SMS",
+    },
+    {
+      icon: <BellIcon className="w-6 h-6 text-blue-900" />,
+      iconBg: "bg-blue-100",
+      title: "Transaction Alerts",
+      description: "Get notified for all transactions",
+    },
+    {
+      icon: <LockClosedIcon className="w-6 h-6 text-green-700" />,
+      iconBg: "bg-blue-100",
+      title: "Login Alerts",
+      description: "Get notified for new login attempts",
+    },
+    {
+      icon: <GlobeAltIcon className="w-6 h-6 text-green-700" />,
+      iconBg: "bg-blue-100",
+      title: "Marketing & Updates",
+      description: "News, product updates, and promotions",
+    },
+  ]
 
-  const toggleSwitch = (key) => {
-    setNotifications((prev) => ({
-      ...prev,
-      [key]: !prev[key],
-    }));
-  };
 
-  const ToggleButton = ({ isOn, onClick }) => (
-    <button
-      onClick={onClick}
-      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 ${
-        isOn ? "bg-blue-900" : "bg-slate-300"
-      }`}
-    >
-      <span
-        className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-300 ${
-          isOn ? "translate-x-6" : "translate-x-1"
-        }`}
-      />
-    </button>
-  );
+  const [enabledStates, setEnabledStates] = useState(
+    Array(cards.length).fill(true)
+  )
+
+  const toggle = (index) => {
+    const newStates = [...enabledStates]
+    newStates[index] = !newStates[index]
+    setEnabledStates(newStates)
+  }
 
   return (
-    <div className="bg-(--bg-primary) space-y-4">
-      <h3 className="text-lg font-bold text-(--text-primary) mb-4 px-4">
-        Notification Channels
-      </h3>
+    <div className="space-y-5 p-4">
+      <h3 className="text-lg font-bold text-slate-900 px-4">Notification Channels</h3>
 
-      {/* Email */}
-      <div className="rounded-2xl shadow-lg bg-(--bg-surface) p-4 flex items-center justify-between">
-        <div className="flex items-start gap-3">
-          <div className="bg-blue-100 p-2 rounded-lg">
-            <EnvelopeIcon className="w-6 h-6 text-blue-900" />
+      {cards.map((card, index) => (
+        <div
+          key={index}
+          className="rounded-2xl shadow-lg bg-white p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-0"
+        >
+          <div className="flex items-start md:items-center gap-3 w-full md:w-auto">
+            <div className={`${card.iconBg} p-2 rounded-lg shrink-0`}>
+              {card.icon}
+            </div>
+            <div className="flex flex-col flex-1">
+              <h2 className="text-lg font-sm">{card.title}</h2>
+              <p className="text-md text-slate-500">{card.description}</p>
+            </div>
           </div>
-          <div>
-            <h2 className="text-lg font-sm">Email Notifications</h2>
-            <p className="text-sm text-slate-500">Receive notifications via email</p>
-          </div>
+          <button
+            onClick={() => toggle(index)}
+            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 mt-2 md:mt-0 ${
+              enabledStates[index] ? 'bg-blue-900' : 'bg-slate-300'
+            }`}
+          >
+            <span
+              className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-300 ${
+                enabledStates[index] ? 'translate-x-6' : 'translate-x-1'
+              }`}
+            />
+          </button>
         </div>
-        <ToggleButton
-          isOn={notifications.email}
-          onClick={() => toggleSwitch("email")}
-        />
-      </div>
-
-      {/* SMS */}
-      <div className="rounded-2xl shadow-lg bg-(--bg-surface) p-4 flex items-center justify-between">
-        <div className="flex items-start gap-3">
-          <div className="bg-green-100 p-2 rounded-lg">
-            <PhoneArrowDownLeftIcon className="w-6 h-6 text-green-700" />
-          </div>
-          <div>
-            <h2 className="text-lg font-sm">SMS Notifications</h2>
-            <p className="text-sm text-slate-500">Receive notifications via SMS</p>
-          </div>
-        </div>
-        <ToggleButton
-          isOn={notifications.sms}
-          onClick={() => toggleSwitch("sms")}
-        />
-      </div>
-
-      <div className="border-t border-slate-200 my-5"></div>
-
-      {/* Alert Types */}
-      <h3 className="text-lg font-bold text-(--text-primary) mb-4 px-4">
-        Alert Types
-      </h3>
-
-      {/* Transaction */}
-      <div className="rounded-2xl shadow-lg bg-(--bg-surface) p-4 flex items-center justify-between">
-        <div className="flex items-start gap-3">
-          <div className="bg-blue-100 p-2 rounded-lg">
-            <BellIcon className="w-6 h-6 text-blue-900" />
-          </div>
-          <div>
-            <h2 className="text-lg font-sm">Transaction Alerts</h2>
-            <p className="text-sm text-slate-500">Get notified for all transactions</p>
-          </div>
-        </div>
-        <ToggleButton
-          isOn={notifications.transaction}
-          onClick={() => toggleSwitch("transaction")}
-        />
-      </div>
-
-      {/* Login */}
-      <div className="rounded-2xl shadow-lg bg-(--bg-surface) p-4 flex items-center justify-between">
-        <div className="flex items-start gap-3">
-          <div className="bg-green-100 p-2 rounded-lg">
-            <LockClosedIcon className="w-6 h-6 text-green-700" />
-          </div>
-          <div>
-            <h2 className="text-lg font-sm">Login Alerts</h2>
-            <p className="text-sm text-slate-500">Get notified for new login attempts</p>
-          </div>
-        </div>
-        <ToggleButton
-          isOn={notifications.login}
-          onClick={() => toggleSwitch("login")}
-        />
-      </div>
-
-      {/* Marketing */}
-      <div className="rounded-2xl shadow-lg bg-(--bg-surface) p-4 flex items-center justify-between">
-        <div className="flex items-start gap-3">
-          <div className="bg-purple-100 p-2 rounded-lg">
-            <GlobeAltIcon className="w-6 h-6 text-purple-700" />
-          </div>
-          <div>
-            <h2 className="text-lg font-sm">Marketing & Updates</h2>
-            <p className="text-sm text-slate-500">News, product updates, and promotions</p>
-          </div>
-        </div>
-        <ToggleButton
-          isOn={notifications.marketing}
-          onClick={() => toggleSwitch("marketing")}
-        />
-      </div>
+      ))}
     </div>
-  );
-};
+  )
+}
 
-export default Notifications;
+export default Notifications

@@ -1,4 +1,3 @@
-// C:\Users\PMLS\aldar\src\pages\ProfilePage.jsx
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import Profileheader from '../components/profileandsettings/Profileheader';
@@ -12,38 +11,36 @@ const ProfilePage = () => {
 
   return (
     <DashboardContent>
-      <div className="bg-gray-50 min-h-screen">
-        {/* Page Title */}
-        <div className="flex flex-col max-w-5xl mx-auto px-4">
-          <h1 className="text-3xl font-semibold text-gray-900 mb-2">
+  
+        <div className="flex flex-col max-w-6xl mx-auto px-2 sm:px-6 lg:px-8">
+          <h1 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-1">
             Profile & Settings
           </h1>
-          <h2 className="text-sm text-gray-600 mb-6">
+          <h2 className="text-sm sm:text-base text-gray-600 mb-6">
             Manage your account settings and preferences
           </h2>
         </div>
-
-        {/* Profile Header & Tabs */}
-        <div className="max-w-5xl mx-auto px-4 space-y-6 mb-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 mb-10">
+          
           <Profileheader
             action={
               <button
                 onClick={() => navigate("/dashboard/setting")}
-                className="flex items-center gap-2 px-3 py-3 text-sm font-medium rounded-xl border border-blue-700 text-blue-700 hover:bg-blue-100 transition duration-200"
+                className="flex items-center gap-2 px-3 py-2 sm:px-3 sm:py-3 text-xs sm:text-sm font-medium rounded-xl border border-blue-700 text-blue-700 hover:bg-blue-100 transition duration-200 whitespace-nowrap"
               >
-                <PencilIcon className="w-5 h-5" />
+                <PencilIcon className="w-4 h-4 sm:w-5 sm:h-5" />
                 EDIT PROFILE
               </button>
             }
           />
 
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-4">
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-4 sm:p-6">
             <Profiletabs />
             <div className="border-t border-gray-200 my-3"></div>
+
             <ProfileForm />
           </div>
         </div>
-      </div>
     </DashboardContent>
   );
 };

@@ -10,6 +10,7 @@ import {
 import { FiSettings, FiLogOut, FiUser } from "react-icons/fi";
 import SidebarMenuItem from "./SiderbarMenuItem";
 import { Link } from "react-router-dom";
+
 // Map labels to icons
 const iconMap = {
   "Dashboard": <LayoutDashboard size={20} />,

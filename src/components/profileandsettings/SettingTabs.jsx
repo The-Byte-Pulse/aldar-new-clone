@@ -1,31 +1,27 @@
-import { useEffect, useState } from "react";
-import { FaMoon, FaSun } from "react-icons/fa";
+import React from 'react'
 
-export default function ThemeSwitcher() {
-  const [theme, setTheme] = useState(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) return savedTheme;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  });
-
-  // Apply theme class on mount and whenever theme changes
-  useEffect(() => {
-    const root = document.documentElement;
-    root.classList.toggle("dark", theme === "dark");
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+const SettingTabs = ({ Activetab, SetActiveTab }) => {
+  const tabs = ["Security", "Notifications", "Preferences"]
 
   return (
-    <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="flex items-center gap-2 w-full px-3 py-2 rounded-lg hover:bg-[var(--bg-primary)] transition-all"
-    >
-      <span className="transition-transform duration-300">
-        {theme === "dark" ? <FaSun /> : <FaMoon />}
-      </span>
-      {theme === "dark" ? "Light Mode" : "Dark Mode"}
-    </button>
-  );
+    <div className="overflow-x-auto px-2 py-2">
+      <div className="flex gap-2 min-w-max">
+        {tabs.map((tab, index) => (
+          <button
+            key={index}
+            onClick={() => SetActiveTab(index)}
+            className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 whitespace-nowrap
+              ${Activetab === index 
+                ? 'bg-blue-100 text-blue-900' 
+                : 'text-slate-500 hover:bg-slate-100'
+              }`}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+    </div>
+  )
 }
+
+export default SettingTabs
