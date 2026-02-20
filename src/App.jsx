@@ -6,6 +6,7 @@ import FundingPage from './page/FundingPage'
 import BankAccounts from './page/BankAccounts'
 import Beneficiaries from './page/Beneficiaries'
 import CardPayments from './page/CardPayments'
+import Fundinghistroy from './page/Fundinghistroy'
 
 
 function App() {
@@ -17,7 +18,9 @@ function App() {
    <Route path='/bankaccount' element={<BankAccounts/>}/>
    <Route path='/cardpayment' element={<CardPayments/>}/>
    <Route path='/beneficiaries' element={<Beneficiaries/>}/>
+   <Route path='/fundinghistroy' element={<Fundinghistroy/>}/>
    </Routes>
+   
   )
 }
 

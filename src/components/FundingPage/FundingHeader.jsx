@@ -1,5 +1,6 @@
 import React from "react";
 import { Wallet, Plus, CreditCard } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const FundingHeader = () => {
   return (
@@ -17,9 +18,9 @@ const FundingHeader = () => {
           </p>
         </div>
 
-        <button className="w-full sm:w-auto border border-blue-600 text-blue-600 px-5 py-2 rounded-xl hover:bg-blue-50 transition">
+        <Link to="/fundinghistroy" className="w-full sm:w-auto border border-blue-600 text-blue-600 px-5 py-2 rounded-xl hover:bg-blue-50 transition">
           Funding History
-        </button>
+        </Link>
 
       </div>
 
