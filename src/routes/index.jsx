@@ -35,8 +35,9 @@ const router = createBrowserRouter([
       { index: true, element: <Dashboard /> },
       { path: "profile", element: <ProfilePage /> },
       { path: "setting", element: <SettingPage /> },
-      {path: "support", element: <Support/>},
-      {path: "documents", element: <Documents/>},
+      { path: "support", element: <Support /> },
+      { path: "documents", element: <Documents /> },
+      { path: "notifications", element: <Notifications /> },
 
       // WPS routes
       { path: "wps", element: <WPSOverview/> },

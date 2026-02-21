@@ -138,3 +138,74 @@
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-primary);
 }
+/* Main body scrollbar */
+body::-webkit-scrollbar {
+  width: 12px; 
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--bg-primary); 
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary); 
+  border-radius: 10px;
+  border: 3px solid var(--bg-primary); 
+}
+
+body::-webkit-scrollbar-thumb:hover 
+{
+  background-color: var(--secondary); 
+}
+.dark body::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+.dark body::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+}
+
+.dark body {
+  scrollbar-color: var(--secondary) var(--bg-primary);
+}
+
+/* Firefox */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--bg-primary);
+}
+.scrollbar-custom::-webkit-scrollbar {
+  width: 12px;            
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: var(--bg-surface); 
+  border-radius: 10px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: var(--primary); 
+  border-radius: 10px;
+  border: 3px solid var(--bg-surface); 
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary); /* Hover effect */
+}
+
+/* Scrollbar for Firefox */
+.scrollbar-custom {
+  scrollbar-width: thin;         
+  scrollbar-color: var(--primary) var(--bg-surface); 
+}
+.dark .scrollbar-custom::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+
+.dark .scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+}
+
+.dark .scrollbar-custom {
+  scrollbar-color: var(--secondary) var(--bg-surface);
+}
