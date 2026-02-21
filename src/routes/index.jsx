@@ -19,6 +19,12 @@ import FeeReports from "../pages/protected/Reports/FeeReports";
 import Support from "../pages/protected/Support/Support";
 import Documents from "../pages/protected/Documents/Documents";
 import Notifications from "../pages/protected/Notifications/Notifications"; 
+import BankAccounts from "../pages/protected/BankAccounts";
+import Beneficiaries from "../pages/protected/Beneficiaries";
+import CardPayments from "../pages/protected/CardPayments";
+import Fundinghistory from '../pages/Fundinghistroy'
+import FundingPage from '../pages/FundingPage'
+import Refund from '../pages/Refund'
 
 const router = createBrowserRouter([
   {
@@ -35,6 +41,12 @@ const router = createBrowserRouter([
       { path: "support", element: <Support /> },
       { path: "documents", element: <Documents /> },
       { path: "notifications", element: <Notifications /> },
+      { path: "bank-accounts", element: <BankAccounts /> },
+      { path: "beneficiaries", element: <Beneficiaries /> },
+      { path: "card-payments", element: <CardPayments /> },
+      { path: "fundinghistory", element: <Fundinghistory /> },
+      { path: "funding", element: <FundingPage /> },
+      { path: "refund", element: <Refund /> },
 
       // Transaction routes
       {
