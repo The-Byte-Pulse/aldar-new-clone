@@ -18,10 +18,14 @@ import Reports from "../pages/protected/Reports/Reports";
 import FeeReports from "../pages/protected/Reports/FeeReports";
 import Support from "../pages/protected/Support/Support";
 import Documents from "../pages/protected/Documents/Documents";
-import WPSOverview from "../pages/protected/WPS Pages/WPSOverview";
-import UploadSalaryFile from "../pages/protected/WPS Pages/UploadSalaryFile";
-import BatchHistory from "../pages/protected/WPS Pages/BatchHistory";
-import AuthRoutes from "./AuthRoutes";
+import Notifications from "../pages/protected/Notifications/Notifications"; 
+import BankAccounts from "../pages/protected/BankAccounts";
+import Beneficiaries from "../pages/protected/Beneficiaries";
+import CardPayments from "../pages/protected/CardPayments";
+import Fundinghistory from '../pages/Fundinghistroy'
+import FundingPage from '../pages/FundingPage'
+import Refund from '../pages/Refund'
+
 const router = createBrowserRouter([
   ...AuthRoutes,
   {
@@ -38,6 +42,12 @@ const router = createBrowserRouter([
       { path: "support", element: <Support /> },
       { path: "documents", element: <Documents /> },
       { path: "notifications", element: <Notifications /> },
+      { path: "bank-accounts", element: <BankAccounts /> },
+      { path: "beneficiaries", element: <Beneficiaries /> },
+      { path: "card-payments", element: <CardPayments /> },
+      { path: "fundinghistory", element: <Fundinghistory /> },
+      { path: "funding", element: <FundingPage /> },
+      { path: "refund", element: <Refund /> },
 
       // WPS routes
       { path: "wps", element: <WPSOverview/> },

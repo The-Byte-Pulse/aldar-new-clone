@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import SettingTabs from '../components/profileandsettings/SettingTabs';
-import Security from '../components/profileandsettings/Security';
-import Notifications from '../components/profileandsettings/Notifications';
-import Prefrences from '../components/profileandsettings/Prefrences';
-import Profileheader from '../components/profileandsettings/Profileheader';
+import SettingTabs from '../components/profile-and-setting/SettingTabs';
+import Security from '../components/profile-and-setting/Security';
+import Notifications from '../components/profile-and-setting/Notifications';
+import Prefrences from '../components/profile-and-setting/Prefrences';
+import Profileheader from '../components/profile-and-setting/Profileheader';
 import DashboardContent from '../components/dashboard/DashboardContent';
 
 const SettingPage = () => {

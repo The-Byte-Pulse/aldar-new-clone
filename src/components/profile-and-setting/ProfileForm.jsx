@@ -1,12 +1,12 @@
 export default function PersonalInfoForm() {
   return (
-    <div className="p-4 md:p-6">
-      <h3 className="text-base font-bold text-slate-900 mb-6 px-2 md:px-0">
+    <div>
+      <h3 className="text-base font-bold text-slate-900 mb-6">
         Personal Information
       </h3>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
         <div>
           <label className="block text-sm font-medium text-slate-600 mb-2">
             First Name
@@ -19,6 +19,7 @@ export default function PersonalInfoForm() {
                        transition-all duration-200"
           />
         </div>
+
         <div>
           <label className="block text-sm font-medium text-slate-600 mb-2">
             Last Name
@@ -31,11 +32,9 @@ export default function PersonalInfoForm() {
                        transition-all duration-200"
           />
         </div>
-
-        {/* Email */}
         <div>
           <label className="block text-sm font-medium text-slate-600 mb-2">
-            Email
+            Last Name
           </label>
           <input
             type="email"
@@ -45,10 +44,9 @@ export default function PersonalInfoForm() {
                        transition-all duration-200"
           />
         </div>
-
         <div>
           <label className="block text-sm font-medium text-slate-600 mb-2">
-            Phone Number
+            Phone number
           </label>
           <input
             type="text"
@@ -58,7 +56,6 @@ export default function PersonalInfoForm() {
                        transition-all duration-200"
           />
         </div>
-
         <div>
           <label className="block text-sm font-medium text-slate-600 mb-2">
             Designation
@@ -83,7 +80,8 @@ export default function PersonalInfoForm() {
                        transition-all duration-200"
           />
         </div>
+
       </div>
     </div>
-  )
+  );
 }

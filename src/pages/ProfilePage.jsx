@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import Profileheader from '../components/profileandsettings/Profileheader';
-import Profiletabs from '../components/profileandsettings/Profiletabs';
-import ProfileForm from '../components/profileandsettings/ProfileForm';
+import Profileheader from '../components/profile-and-setting/Profileheader';
+import Profiletabs from '../components/profile-and-setting/Profiletabs';
+import ProfileForm from '../components/profile-and-setting/ProfileForm';
 import { PencilIcon } from '@heroicons/react/16/solid';
 import DashboardContent from '../components/dashboard/DashboardContent';
 
