@@ -1,13 +1,13 @@
 import { Route, Routes } from 'react-router-dom'
 import './index.css'
-import Profilepage from './page/Profilepage'
-import SettingPage from './page/SettingPage'
-import FundingPage from './page/FundingPage'
-import BankAccounts from './page/BankAccounts'
-import Beneficiaries from './page/Beneficiaries'
-import CardPayments from './page/CardPayments'
-import Fundinghistroy from './page/Fundinghistroy'
-import Refunds from './page/Refund'
+import Profilepage from './pages/Profilepage'
+import SettingPage from './pages/SettingPage'
+import FundingPage from './pages/FundingPage'
+import BankAccounts from './pages/BankAccounts'
+import Beneficiaries from './pages/Beneficiaries'
+import CardPayments from './pages/CardPayments'
+import Fundinghistroy from './pages/Fundinghistroy'
+import Refunds from './pages/Refund'
 
 
 function App() {
