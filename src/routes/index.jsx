@@ -18,9 +18,12 @@ import Reports from "../pages/protected/Reports/Reports";
 import FeeReports from "../pages/protected/Reports/FeeReports";
 import Support from "../pages/protected/Support/Support";
 import Documents from "../pages/protected/Documents/Documents";
-import Notifications from "../pages/protected/Notifications/Notifications"; 
-
+import WPSOverview from "../pages/protected/WPS Pages/WPSOverview";
+import UploadSalaryFile from "../pages/protected/WPS Pages/UploadSalaryFile";
+import BatchHistory from "../pages/protected/WPS Pages/BatchHistory";
+import AuthRoutes from "./AuthRoutes";
 const router = createBrowserRouter([
+  ...AuthRoutes,
   {
     path: "/",
     element: <Navigate to="/dashboard" />,
@@ -36,26 +39,31 @@ const router = createBrowserRouter([
       { path: "documents", element: <Documents /> },
       { path: "notifications", element: <Notifications /> },
 
-      // Transaction routes
-      {
-        path: "transactions",
-        children: [
-          { index: true, element: <AllTransactions /> },
-          { path: "create", element: <CreateTransaction /> },
-          { path: "pending", element: <PendingTransactions /> },
-        ],
-      },
+      // WPS routes
+      { path: "wps", element: <WPSOverview/> },
+      { path: "wps/upload-salary-file", element: <UploadSalaryFile/> },
+      { path: "wps/batch-history", element: <BatchHistory/> },
 
-      // Reports routes
-      {
-        path: "reports",
-        children: [
-          { index: true, element: <Reports /> },
-          { path: "e-receipts", element: <EReceipts /> },
-          { path: "statements", element: <Statements /> },
-          { path: "fee", element: <FeeReports /> },
-        ],
-      },
+      // Transaction route
+     {
+  path: "transactions",
+  children: [
+    { path: "create", element: <CreateTransaction /> },
+    {index:true, element: <AllTransactions/>},
+    {path: "pending", element: <PendingTransactions/>}
+  ],
+     },
+  {
+  path: "reports",
+  children:[
+    {path: "e-receipts", element: <EReceipts/>},
+    {index: true, element: <Reports/>},
+    {path: "Statements", element: <Statements/>},
+    {path: "free" , element: <FeeReports/>}
+  ]
+},
+
+
     ],
   },
   {
