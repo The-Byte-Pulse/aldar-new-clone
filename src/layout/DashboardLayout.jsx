@@ -36,8 +36,8 @@ export default function DashboardLayout() {
           toggleCollapse={toggleCollapse}
         />
 
-        <main className="flex-1 p-6 (--bg-primary) overflow-auto">
-         <Outlet/>
+        <main className="flex-1 min-w-0 p-6 (--bg-primary) overflow-x-hidden overflow-y-auto">
+          <Outlet />
         </main>
       </div>
     </div>
