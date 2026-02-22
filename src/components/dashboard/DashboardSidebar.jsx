@@ -6,11 +6,12 @@ import {
   CreditCard,
   Users,
   Bell,
+  Link2OffIcon,
 } from "lucide-react";
 import { FiSettings, FiLogOut, FiUser } from "react-icons/fi";
 import SidebarMenuItem from "./SiderbarMenuItem";
 import { Link } from "react-router-dom";
-
+import LogoutButton from "../app/LogoutButton";
 // Map labels to icons
 const iconMap = {
   Dashboard: <LayoutDashboard size={20} />,
@@ -199,13 +200,11 @@ export default function Sidebar({ isOpen, setIsOpen, isCollapsed, user }) {
             {!isCollapsed && <span>Settings</span>}
           </Link>
 
-          <button
-            className="w-full flex items-center gap-3 px-3 py-2 rounded-lg transition duration-200 text-red-500"
-            style={{ backgroundColor: "var(--bg-primary)" }}
-          >
-            {iconMap["Logout"]}
-            {!isCollapsed && <span>Logout</span>}
-          </button>
+          
+         <LogoutButton
+  isCollapsed={isCollapsed}
+  icon={iconMap["Logout"]}
+/>
         </div>
       </aside>
     </>
