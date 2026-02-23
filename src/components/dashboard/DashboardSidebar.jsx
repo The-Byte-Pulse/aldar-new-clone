@@ -10,7 +10,7 @@ import {
 import { FiSettings, FiLogOut, FiUser } from "react-icons/fi";
 import SidebarMenuItem from "./SiderbarMenuItem";
 import { Link } from "react-router-dom";
-
+import LogoutButton from "../app/LogoutButton";
 // Map labels to icons
 const iconMap = {
   Dashboard: <LayoutDashboard size={20} />,
@@ -71,7 +71,9 @@ export default function Sidebar({ isOpen, setIsOpen, isCollapsed, user }) {
       subMenu: ["All Transactions", "Create Transaction", "Pending Approvals"],
     },
     { label: "Beneficiaries" },
-    { label: "Bank Accounts" },
+    { label: "Bank Accounts" ,
+       subMenu:["back-accounts", "funding-page", "refund", "funding-history"]
+   },
     { label: "Card Payments" },
     { label: "Documents" },
     { label: "Notifications" },
@@ -199,13 +201,14 @@ export default function Sidebar({ isOpen, setIsOpen, isCollapsed, user }) {
             {!isCollapsed && <span>Settings</span>}
           </Link>
 
-          <button
+          {/* <button
             className="w-full flex items-center gap-3 px-3 py-2 rounded-lg transition duration-200 text-red-500"
             style={{ backgroundColor: "var(--bg-primary)" }}
           >
             {iconMap["Logout"]}
             {!isCollapsed && <span>Logout</span>}
-          </button>
+          </button> */}
+          <LogoutButton />
         </div>
       </aside>
     </>

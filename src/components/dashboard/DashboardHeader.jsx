@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { FiSearch, FiBell, FiSettings, FiLogOut, FiUser } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import ThemeSwitcher from "../theme/ThemeSwticher";
-
+import LogoutButton from "../app/LogoutButton";
 export default function Header({ user, toggleSidebar }) {
   const [openAvatar, setOpenAvatar] = useState(false);
   const [openNotif, setOpenNotif] = useState(false);
@@ -111,7 +111,7 @@ export default function Header({ user, toggleSidebar }) {
         <div className="relative" ref={avatarRef}>
           <button
             onClick={() => setOpenAvatar((prev) => !prev)}
-            className="w-10 h-10 rounded-full bg-(--primary) text-white flex items-center justify-center font-bold"
+            className="w-10 h-10 rounded-full bg-(--primary) text-white flex items-center cursor-pointer justify-center font-bold"
           >
             {firstLetter}
           </button>
@@ -145,10 +145,7 @@ export default function Header({ user, toggleSidebar }) {
 
               {/* Theme Switcher */}
               <ThemeSwitcher />
-
-              <button className="flex items-center gap-2 w-full px-3 py-2 rounded-lg text-red-500 hover:bg-red-100 dark:hover:bg-red-900">
-                <FiLogOut /> Logout
-              </button>
+              <LogoutButton />
             </div>
           )}
         </div>
