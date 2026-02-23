@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react";
+import styles from "../../auth.module.css";
 
 const Card = ({
   title,

@@ -99,7 +99,7 @@ export default function UploadSalaryFile() {
     <div className="min-h-screen bg-(--bg-primary) p-4 sm:p-6">
       {/* Header */}
       <div className="mb-6 sm:mb-8">
-        <span className="inline-block px-2.5 py-1 rounded-md bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 text-xs font-semibold uppercase tracking-wide mb-3">
+        <span className="inline-block px-2.5 py-1 rounded-md bg-indigo-100 dark:bg-indigo-900/40 text-indigo-900 dark:text-indigo-900 text-xs font-semibold uppercase tracking-wide mb-3">
           WPS
         </span>
         <h1 className="text-xl sm:text-2xl font-bold text-(--text-primary) mb-1">
@@ -119,12 +119,31 @@ export default function UploadSalaryFile() {
           </h3>
         </div>
         <ul className="text-xs sm:text-sm text-indigo-800/90 dark:text-indigo-200/80 space-y-2 mb-4">
-          <li className="flex items-start gap-2"><span className="text-indigo-500 mt-0.5">•</span> Supported formats: Excel (.xlsx, .xls) or CSV (.csv)</li>
-          <li className="flex items-start gap-2"><span className="text-indigo-500 mt-0.5">•</span> Maximum file size: 10MB</li>
-          <li className="flex items-start gap-2"><span className="text-indigo-500 mt-0.5">•</span> Required columns: Employee ID, Name, Basic Salary, Allowances, Deductions</li>
-          <li className="flex items-start gap-2"><span className="text-indigo-500 mt-0.5">•</span> All amounts should be in AED</li>
+          <li className="flex items-start gap-2 text-indigo-900">
+            <span className="text-indigo-500 mt-0.5">•</span> Supported formats:
+            Excel (.xlsx, .xls) or CSV (.csv)
+          </li>
+          <li className="flex items-start gap-2 text-indigo-900">
+            <span className="text-indigo-500 mt-0.5">•</span> Maximum file size:
+            10MB
+          </li>
+          <li className="flex items-start gap-2 text-indigo-900">
+            <span className="text-indigo-500 mt-0.5">•</span> Required columns:
+            Employee ID, Name, Basic Salary, Allowances, Deductions
+          </li>
+          <li className="flex items-start gap-2 text-indigo-900">
+            <span className="text-indigo-500 mt-0.5">•</span> All amounts should
+            be in AED
+          </li>
+          <li className="flex items-start gap-2 text-indigo-900">
+            <span className="text-indigo-500 mt-0.5">•</span> All amounts should
+            be in AED
+          </li>
         </ul>
-        <button type="button" className="flex items-center justify-center sm:justify-start gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition text-sm w-full sm:w-auto shadow-sm">
+        <button
+          type="button"
+          className="flex items-center justify-center sm:justify-start gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition text-sm w-full sm:w-auto shadow-sm"
+        >
           <Download size={16} className="shrink-0" />
           Download Template
         </button>
@@ -150,7 +169,9 @@ export default function UploadSalaryFile() {
             className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
           />
           <div className="flex flex-col items-center max-w-full">
-            <div className={`p-4 rounded-2xl mb-4 shrink-0 transition-colors ${dragActive ? "bg-indigo-500/20 text-indigo-600" : "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400"}`}>
+            <div
+              className={`p-4 rounded-2xl mb-4 shrink-0 transition-colors ${dragActive ? "bg-indigo-500/20 text-indigo-600" : "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400"}`}
+            >
               <Upload className="w-10 h-10 sm:w-12 sm:h-12" size={40} />
             </div>
             <h3 className="text-base sm:text-lg font-semibold text-(--text-primary) mb-1 sm:mb-2 px-2">
@@ -159,7 +180,10 @@ export default function UploadSalaryFile() {
             <p className="text-xs sm:text-sm text-(--text-secondary) mb-4">
               or click to browse from your computer
             </p>
-            <button type="button" className="px-6 py-2.5 rounded-xl bg-(--primary) text-white font-medium hover:opacity-90 transition text-sm shadow-sm">
+            <button
+              type="button"
+              className="px-6 py-2.5 rounded-xl bg-(--primary) text-white font-medium hover:opacity-90 transition text-sm shadow-sm"
+            >
               Select File
             </button>
           </div>
@@ -195,7 +219,10 @@ export default function UploadSalaryFile() {
         {validationErrors.length > 0 && (
           <div className="mt-4 p-4 rounded-2xl bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800/50">
             <div className="flex items-start gap-3">
-              <AlertTriangle className="text-red-600 dark:text-red-400 shrink-0 mt-0.5" size={20} />
+              <AlertTriangle
+                className="text-red-600 dark:text-red-400 shrink-0 mt-0.5"
+                size={20}
+              />
               <div className="flex-1 min-w-0">
                 <h4 className="font-semibold text-sm sm:text-base text-red-800 dark:text-red-200 mb-1">
                   Validation Errors
@@ -222,7 +249,10 @@ export default function UploadSalaryFile() {
               <span className="text-xs sm:text-sm text-(--text-secondary)">
                 {previewData.length} records found
               </span>
-              <button className="p-2 rounded-xl hover:bg-indigo-500/10 text-(--text-secondary) hover:text-(--primary) transition" aria-label="View">
+              <button
+                className="p-2 rounded-xl hover:bg-indigo-500/10 text-(--text-secondary) hover:text-(--primary) transition"
+                aria-label="View"
+              >
                 <Eye size={18} />
               </button>
             </div>
@@ -237,18 +267,28 @@ export default function UploadSalaryFile() {
               >
                 <div className="flex justify-between items-start">
                   <span className="text-xs text-(--text-secondary)">ID</span>
-                  <span className="text-sm font-medium text-(--text-primary)">{emp.empId}</span>
+                  <span className="text-sm font-medium text-(--text-primary)">
+                    {emp.empId}
+                  </span>
                 </div>
                 <div className="flex justify-between items-start">
                   <span className="text-xs text-(--text-secondary)">Name</span>
-                  <span className="text-sm text-(--text-primary)">{emp.name}</span>
+                  <span className="text-sm text-(--text-primary)">
+                    {emp.name}
+                  </span>
                 </div>
                 <div className="flex justify-between items-start">
-                  <span className="text-xs text-(--text-secondary)">Net Salary</span>
-                  <span className="text-sm font-semibold text-(--text-primary)">AED {emp.netSalary}</span>
+                  <span className="text-xs text-(--text-secondary)">
+                    Net Salary
+                  </span>
+                  <span className="text-sm font-semibold text-(--text-primary)">
+                    AED {emp.netSalary}
+                  </span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-xs text-(--text-secondary)">Status</span>
+                  <span className="text-xs text-(--text-secondary)">
+                    Status
+                  </span>
                   <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300">
                     {emp.status}
                   </span>
@@ -256,7 +296,9 @@ export default function UploadSalaryFile() {
               </div>
             ))}
             <div className="p-4 rounded-xl border-2 border-(--border) bg-(--bg-surface) flex justify-between items-center">
-              <span className="text-sm font-semibold text-(--text-primary)">Total Payroll:</span>
+              <span className="text-sm font-semibold text-(--text-primary)">
+                Total Payroll:
+              </span>
               <span className="font-bold text-(--primary)">AED 17,170</span>
             </div>
           </div>

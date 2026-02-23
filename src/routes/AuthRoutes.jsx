@@ -1,5 +1,5 @@
 import AuthLayout from "../layout/AuthLayout";
-import LogIn from "../Pages/authentication/LogIn";
+import LogIn from "../pages/authentication/LogIn";
 
 import Otp from "../pages/authentication/Otp";
 import LoginLeft from "../components/partials/login/LoginLeft";
@@ -12,10 +12,8 @@ import CreateAccount from "../pages/RegistrationInstruction";
 
 const AuthRoutes = [
   {
-    path : "/",
-    element: (
-      <AuthLayout leftContent={<LoginLeft/>}/>
-    ),
+    path: "/",
+    element: <AuthLayout leftContent={<LoginLeft />} />,
     children: [
       {
         index: true,
@@ -42,27 +40,25 @@ const AuthRoutes = [
     ],
   },
   {
-    path : "registration",
-    element : <RegistrationLayout/>,
-    children:[
+    path: "registration",
+    element: <RegistrationLayout />,
+    children: [
       {
-      index : true,
-      element : <RegistrationInstruction/>,
-      }
-
-
-    ]
+        index: true,
+        element: <RegistrationInstruction />,
+      },
+    ],
   },
   {
-    path : "register",
-    element : <RegisterLayout/>,
-    children :[
+    path: "register",
+    element: <RegisterLayout />,
+    children: [
       {
-        path : "create-account",
-        element: <CreateAccount/>
-      }
-    ]
-  }
+        path: "create-account",
+        element: <CreateAccount />,
+      },
+    ],
+  },
 ];
 
 export default AuthRoutes;

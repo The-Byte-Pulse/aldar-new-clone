@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
-import Card from "../components/partials/card";
+import Card from "../components/partials/Card.jsx";
+import styles from "../auth.module.css";
 import { NavLink } from "react-router-dom";
 
 const RegistrationInstruction = () => {
@@ -60,16 +61,25 @@ const RegistrationInstruction = () => {
           subCaption5="Full transaction lifecycle"
           subCaption6="Monitoring & insights"
         />
-       
       </div>
-       <div className="flex  justify-center  my-4">
-           <NavLink to="/register/create-account" className="font-poppins bg-accent flex items-center gap-2 justify-center text-text_primary px-4 py-3 rounded-lg cursor-pointer">Start Registration <span><Icon icon="iconamoon:arrow-right-1" width="24" height="24" /></span></NavLink>
-          
-           
-        </div>
-       <h5 className="text-center font-poppins text-sm">
-            Already have an account? <NavLink className="text-accent " to="/login"> Sign in here </NavLink>
-        </h5>
+      <div className="flex  justify-center  my-4">
+        <NavLink
+          to="/register/create-account"
+          className="font-poppins bg-accent flex items-center gap-2 justify-center text-text_primary px-4 py-3 rounded-lg cursor-pointer"
+        >
+          Start Registration{" "}
+          <span>
+            <Icon icon="iconamoon:arrow-right-1" width="24" height="24" />
+          </span>
+        </NavLink>
+      </div>
+      <h5 className="text-center font-poppins text-sm">
+        Already have an account?{" "}
+        <NavLink className="text-accent " to="/login">
+          {" "}
+          Sign in here{" "}
+        </NavLink>
+      </h5>
     </>
   );
 };

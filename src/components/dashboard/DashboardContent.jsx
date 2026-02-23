@@ -1,19 +1,15 @@
-import { Helmet } from "react-helmet-async";
 import { Fragment } from "react";
-const DashboardContent = ({ title = "", description = "",  children }) => {
-    return (
-        <Fragment>
-            <Helmet>
-                <html lang="en" />
-                <title>{title}</title>
-                <meta name="description" content={description} />
-            </Helmet>
+const DashboardContent = ({ title = "", description = "", children }) => {
+  return (
+    <Fragment>
+      <title>{title}</title>
+      <meta name="description" content={description} />
 
-            <div className="m-5" >
-                <div className="relative">{children}</div>
-            </div>
-        </Fragment>
-    );
+      <div className="m-5">
+        <div className="relative">{children}</div>
+      </div>
+    </Fragment>
+  );
 };
 
 export default DashboardContent;

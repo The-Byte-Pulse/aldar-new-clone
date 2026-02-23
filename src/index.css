@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* Import Tailwind */
 
@@ -8,23 +8,18 @@
    Base Styles
 ========================= */
 
-
-
-
-
-@theme{
-    --font-open-sans : "open sans";
-    --font-poppins : "poppins";
-    --color-text_primary : #dedbd2;
-    --color-text_secondary : #e6e6e9;
-    --color-border_color : #ced4da;
-    --color-primary : #4f46e5;
-    --color-highlight: #bd9b60;
-    --color-secondary : #6366f1;
-    --color-accent : #03045e;
-    --color-background : #f7f9fc;
-    --color-card : #ffffff;
-    
+@theme {
+  --font-open-sans: "open sans";
+  --font-poppins: "poppins";
+  --color-text_primary: #dedbd2;
+  --color-text_secondary: #e6e6e9;
+  --color-border_color: #ced4da;
+  --color-primary: #4f46e5;
+  --color-highlight: #bd9b60;
+  --color-secondary: #6366f1;
+  --color-accent: #03045e;
+  --color-background: #f7f9fc;
+  --color-card: #ffffff;
 }
 @layer base {
   * {
@@ -51,32 +46,32 @@
    Light Theme Variables
 ========================= */
 :root {
-  --bg-primary: #F7F9FC;
-  --bg-surface: #FFFFFF;
-  --primary: #4F46E5;
-  --secondary: #6366F1;
-  --accent: #22C55E;
+  --bg-primary: #f7f9fc;
+  --bg-surface: #ffffff;
+  --primary: #4f46e5;
+  --secondary: #6366f1;
+  --accent: #22c55e;
 
-  --text-primary: #0F172A;
-  --text-secondary: #64748B;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
 
-  --border: #E5E7EB;
+  --border: #e5e7eb;
 }
 
 /* =========================
    Dark Theme Variables
 ========================= */
 .dark {
-  --bg-primary: #0B0F1A;
+  --bg-primary: #0b0f1a;
   --bg-surface: #111827;
-  --primary: #6366F1;
-  --secondary: #8B5CF6;
-  --accent: #22D3EE;
+  --primary: #6366f1;
+  --secondary: #8b5cf6;
+  --accent: #22d3ee;
 
-  --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
 
-  --border: #1F2937;
+  --border: #1f2937;
 }
 
 /* =========================
@@ -123,7 +118,7 @@
 /* Inputs */
 .input-primary {
   background: var(--bg-surface);
-  border: 1px solid var(--border);
+  border: 1px solid var(--primary);
   padding: 0.5rem 1rem;
   border-radius: 6px;
   color: var(--text-primary);
@@ -135,27 +130,31 @@
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--text-primary);
 }
 /* Main body scrollbar */
 body::-webkit-scrollbar {
-  width: 12px; 
+  width: 12px;
 }
 
 body::-webkit-scrollbar-track {
-  background: var(--bg-primary); 
+  background: var(--bg-primary);
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--primary); 
+  background-color: var(--primary);
   border-radius: 10px;
-  border: 3px solid var(--bg-primary); 
+  border: 3px solid var(--bg-primary);
 }
 
-body::-webkit-scrollbar-thumb:hover 
-{
-  background-color: var(--secondary); 
+body::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary);
 }
 .dark body::-webkit-scrollbar-track {
   background: var(--bg-primary);
@@ -175,18 +174,18 @@ body {
   scrollbar-color: var(--primary) var(--bg-primary);
 }
 .scrollbar-custom::-webkit-scrollbar {
-  width: 12px;            
+  width: 12px;
 }
 
 .scrollbar-custom::-webkit-scrollbar-track {
-  background: var(--bg-surface); 
+  background: var(--bg-surface);
   border-radius: 10px;
 }
 
 .scrollbar-custom::-webkit-scrollbar-thumb {
-  background-color: var(--primary); 
+  background-color: var(--primary);
   border-radius: 10px;
-  border: 3px solid var(--bg-surface); 
+  border: 3px solid var(--bg-surface);
 }
 
 .scrollbar-custom::-webkit-scrollbar-thumb:hover {
@@ -195,8 +194,8 @@ body {
 
 /* Scrollbar for Firefox */
 .scrollbar-custom {
-  scrollbar-width: thin;         
-  scrollbar-color: var(--primary) var(--bg-surface); 
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--bg-surface);
 }
 .dark .scrollbar-custom::-webkit-scrollbar-track {
   background: var(--bg-surface);

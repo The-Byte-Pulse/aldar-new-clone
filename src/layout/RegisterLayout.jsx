@@ -1,13 +1,13 @@
 import AccountCreationSteps from "../components/common/AccountCreationSteps";
 import RegisterNav from "../components/common/RegisterNav";
 import { useState } from "react";
-import CreateAccount from "../Pages/registration/CreateAccount";
+import CreateAccount from "../pages/registration/CreateAccount";
 import { Icon } from "@iconify/react";
-import PhoneVerification from "../Pages/registration/PhoneVerification";
-import CompanyInformation from "../Pages/registration/CompanyInformation";
-import AuthorizedPerson from "../Pages/registration/AuthorizedPerson";
-import UploadDocuments from "../Pages/registration/UploadDocuments";
-import UserRole from "../Pages/registration/UserRole";
+import PhoneVerification from "../pages/registration/PhoneVerification";
+import CompanyInformation from "../pages/registration/CompanyInformation";
+import AuthorizedPerson from "../pages/registration/AuthorizedPerson";
+import UploadDocuments from "../pages/registration/UploadDocuments";
+import UserRole from "../pages/registration/UserRole";
 
 const RegisterLayout = () => {
   const [currStep, setCurrStep] = useState(1);
