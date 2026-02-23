@@ -7,7 +7,7 @@ const labelToPath = {
   Dashboard: "/dashboard",
   Transactions: "/dashboard/transactions",
   Beneficiaries: "/dashboard/beneficiaries",
-  "Bank Accounts": "/dashboard/bank-accounts",
+  BankAccounts: "/dashboard/bankaccounts",
   "Card Payments": "/dashboard/card-payments",
   Documents: "/dashboard/documents",
   "WPS / Salary": "/dashboard/wps",
@@ -23,6 +23,10 @@ const subMenuToPath = {
   "All Transactions": "/dashboard/transactions",
   "Create Transaction": "/dashboard/transactions/create",
   "Pending Approvals": "/dashboard/transactions/pending",
+ "back-accounts": "/dashboard/back-accounts",
+  "funding-history": "/dashboard/back-accounts/funding-history",
+  "funding-page": "/dashboard/back-accounts/funding-page",
+  "refund": "/dashboard/back-accounts/refund",
   "WPS Overview": "/dashboard/wps",
   "Upload Salary File": "/dashboard/wps/upload-salary-file",
   "Batch History": "/dashboard/wps/batch-history",
@@ -58,7 +62,7 @@ export default function SidebarMenuItem({ icon, label, collapsed, subMenu }) {
     <div>
       <button
         onClick={handleClick}
-        className={`flex items-center justify-between w-full px-3 py-2 rounded-lg transition ${
+        className={`flex items-center justify-between w-full px-3 py-2 rounded-lg transition cursor-pointer ${
           isActive
             ? "bg-(--primary) text-white"
             : "hover:bg-(--bg-primary) text-(--text-primary)"
@@ -89,7 +93,7 @@ export default function SidebarMenuItem({ icon, label, collapsed, subMenu }) {
               <button
                 key={index}
                 onClick={() => subPath && navigate(subPath)}
-                className={`flex w-full px-3 py-2 text-sm rounded-lg transition ${
+                className={`flex w-full px-3 py-2 text-sm rounded-lg transition cursor-pointer ${
                   isSubActive
                     ? "bg-(--primary) text-white font-medium"
                     : "hover:bg-(--bg-primary) text-(--text-primary)"

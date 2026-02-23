@@ -19,13 +19,21 @@ import FeeReports from "../pages/protected/Reports/FeeReports";
 import Support from "../pages/protected/Support/Support";
 import Documents from "../pages/protected/Documents/Documents";
 import Notifications from "../pages/protected/Notifications/Notifications"; 
-import BankAccounts from "../pages/protected/BankAccounts";
+// import BankAccounts from "../pages/protected/BankAccounts";
 import Beneficiaries from "../pages/protected/Beneficiaries";
 import CardPayments from "../pages/protected/CardPayments";
-import Fundinghistory from '../pages/Fundinghistroy'
-import FundingPage from '../pages/FundingPage'
-import Refund from '../pages/Refund'
-
+// import Fundinghistory from '../pages/Fundinghistroy'
+// import FundingPage from '../pages/FundingPage'
+// import Refund from '../pages/Refund'
+import AuthRoutes from "./AuthRoutes";
+import WPSOverview from "../pages/protected/WPS Pages/WPSOverview";
+import UploadSalaryFile from "../pages/protected/WPS Pages/UploadSalaryFile";
+import BatchHistory from "../pages/protected/WPS Pages/BatchHistory";
+import UserManagement from "../pages/protected/UserManangement/UserManagement";
+import BankAccounts from "../pages/protected/BackAccount/BankAccounts";
+import FundingPage from "../pages/protected/BackAccount/FundingPage";
+import Refunds from "../pages/protected/BackAccount/Refund";
+import Fundinghistory from "../pages/protected/BackAccount/Fundinghistroy";
 const router = createBrowserRouter([
   ...AuthRoutes,
   {
@@ -45,14 +53,15 @@ const router = createBrowserRouter([
       { path: "bank-accounts", element: <BankAccounts /> },
       { path: "beneficiaries", element: <Beneficiaries /> },
       { path: "card-payments", element: <CardPayments /> },
-      { path: "fundinghistory", element: <Fundinghistory /> },
-      { path: "funding", element: <FundingPage /> },
-      { path: "refund", element: <Refund /> },
+      // { path: "fundinghistory", element: <Fundinghistory /> },
+      // { path: "funding", element: <FundingPage /> },
+      // { path: "refund", element: <Refund /> },
 
       // WPS routes
       { path: "wps", element: <WPSOverview/> },
       { path: "wps/upload-salary-file", element: <UploadSalaryFile/> },
       { path: "wps/batch-history", element: <BatchHistory/> },
+      {path: "user-management", element:<UserManagement/>},
 
       // Transaction route
      {
@@ -63,6 +72,16 @@ const router = createBrowserRouter([
     {path: "pending", element: <PendingTransactions/>}
   ],
      },
+     
+  {
+  path: "back-accounts",
+  children: [
+    { index: true, element: <BankAccounts /> },
+    { path: "funding-page", element: <FundingPage /> },
+    { path: "refund", element: <Refunds /> },
+    { path: "funding-history", element: <Fundinghistory /> },
+  ],
+},
   {
   path: "reports",
   children:[

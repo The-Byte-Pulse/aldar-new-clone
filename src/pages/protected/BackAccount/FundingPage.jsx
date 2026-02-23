@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import FundingHeader from '../components/FundingPage/FundingHeader'
-import BankTransfer from '../components/FundingPage/BankTransfer';
-import CardPayment from '../components/FundingPage/CardPayment';
-import ChequeDeposite from '../components/FundingPage/ChequeDeposite';
-import FundingTabs from '../components/FundingPage/FundingTabs';
+import FundingHeader from '../../../components/FundingPage/FundingHeader'
+import BankTransfer from '../../../components/FundingPage/BankTransfer';
+import CardPayment from '../../../components/FundingPage/CardPayment';
+import ChequeDeposite from '../../../components/FundingPage/ChequeDeposite';
+import FundingTabs from '../../../components/FundingPage/FundingTabs';
 import { ArrowUpDown } from "lucide-react";
 
 const FundingPage = () => {
