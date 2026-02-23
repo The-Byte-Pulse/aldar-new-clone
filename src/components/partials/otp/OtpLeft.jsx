@@ -1,6 +1,6 @@
 import { Building2 } from "lucide-react";
 import { useOtp } from "../../../context/OtpContext";
-
+import "../../../auth.css";
 const OtpLeft = () => {
   const { otpType } = useOtp();
 

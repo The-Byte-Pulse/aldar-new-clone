@@ -1,5 +1,5 @@
 import AuthLayout from "../layout/AuthLayout";
-import LogIn from "../Pages/authentication/LogIn";
+import LogIn from "../pages/authentication/LogIn";
 
 import Otp from "../pages/authentication/Otp";
 import LoginLeft from "../components/partials/login/LoginLeft";
@@ -8,7 +8,8 @@ import { OtpProvider } from "../context/OtpContext";
 import RegistrationLayout from "../layout/RegistrationLayout";
 import RegistrationInstruction from "../pages/RegistrationInstruction";
 import RegisterLayout from "../layout/RegisterLayout";
-import CreateAccount from "../pages/registration/CreateAccount";
+import CreateAccount from "../Pages/registration/CreateAccount";
+
 
 const AuthRoutes = [
   {

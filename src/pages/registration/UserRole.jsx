@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import UserForm from "../../components/partials/UserForm";
-
+import "../../auth.css";
 const UserRole = () => {
   return (
     <section className="py-6">

@@ -1,3 +1,4 @@
+import "../../auth.css";
 const CompanyInformation = () => {
   return (
     <section className="py-6 font-open-sans">

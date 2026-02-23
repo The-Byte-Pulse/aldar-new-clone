@@ -8,6 +8,7 @@ import CompanyInformation from "../Pages/registration/CompanyInformation";
 import AuthorizedPerson from "../Pages/registration/AuthorizedPerson";
 import UploadDocuments from "../Pages/registration/UploadDocuments";
 import UserRole from "../Pages/registration/UserRole";
+import "../auth.css";
 
 const RegisterLayout = () => {
   const [currStep, setCurrStep] = useState(1);

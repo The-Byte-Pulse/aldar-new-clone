@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-
+import "../../auth.css";
 const PhoneVerification = () =>{
     return(
         <>

@@ -11,21 +11,6 @@
 
 
 
-
-@theme{
-    --font-open-sans : "open sans";
-    --font-poppins : "poppins";
-    --color-text_primary : #dedbd2;
-    --color-text_secondary : #e6e6e9;
-    --color-border_color : #ced4da;
-    --color-primary : #4f46e5;
-    --color-highlight: #bd9b60;
-    --color-secondary : #6366f1;
-    --color-accent : #03045e;
-    --color-background : #f7f9fc;
-    --color-card : #ffffff;
-    
-}
 @layer base {
   * {
     box-sizing: border-box;

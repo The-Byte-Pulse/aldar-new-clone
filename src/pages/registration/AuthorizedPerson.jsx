@@ -1,3 +1,5 @@
+import "../../auth.css";
+
 const AuthorizedPerson = () => {
   return (
     <>

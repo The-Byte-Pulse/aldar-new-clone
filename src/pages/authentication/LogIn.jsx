@@ -1,4 +1,5 @@
 import LoginForm from "../../components/partials/login/LoginForm";
+import "../../auth.css";
 
 
 const LogIn = () => {

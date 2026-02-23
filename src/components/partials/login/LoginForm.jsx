@@ -1,6 +1,6 @@
 import { Lock } from "lucide-react";
 import { NavLink } from "react-router-dom";
-
+import "../../../auth.css";
 const LoginForm = () => {
  
   return (

@@ -1,5 +1,5 @@
 import { Building2, Lock, Shield } from "lucide-react";
-
+import "../../../auth.css";
 const LoginLeft = () =>{
     return(
         <>
@@ -34,7 +34,7 @@ const LoginLeft = () =>{
                     <Shield />
                   </div>
                   <div>
-                    <h5 className="text-text_primary">Financial Solutions</h5>
+                    <h5 className="text-text_primary font-medium">Financial Solutions</h5>
                     <p className="text-text_secondary text-[12px]">
                       256-bit encryption & multi-factor authentication
                     </p>
@@ -45,7 +45,7 @@ const LoginLeft = () =>{
                     <Lock />
                   </div>
                   <div>
-                    <h5 className="text-text_primary">Regulatory Compliance</h5>
+                    <h5 className="text-text_primary font-medium">Regulatory Compliance</h5>
                     <p className="text-text_secondary text-[12px]">
                       Licensed by UAE Central Bank
                     </p>

@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import { Upload } from "lucide-react";
-
+import "../../auth.css";
 const documents = [
   {
     icon: <Icon icon="lets-icons:upload" width="24" height="24" />,

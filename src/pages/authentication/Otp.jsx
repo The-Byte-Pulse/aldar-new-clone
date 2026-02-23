@@ -2,7 +2,7 @@
 
 import OtpRight from "../../components/partials/otp/OtpRight";
 
-
+import "../../auth.css";
 
 const Otp = () =>{
     

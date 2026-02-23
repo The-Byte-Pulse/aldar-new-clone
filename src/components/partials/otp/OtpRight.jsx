@@ -1,7 +1,7 @@
 import { Mail, MoveLeft, RefreshCcw, Smartphone } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useOtp } from "../../../context/OtpContext";
-
+import "../../../auth.css";
 const OtpRight = () => {
   const { otpType, setOtpType } = useOtp();
   const isEmail = otpType === "email";

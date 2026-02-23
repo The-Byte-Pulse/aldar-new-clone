@@ -1,6 +1,6 @@
 import { Building2 } from "lucide-react";
 import { Outlet } from "react-router-dom";
-
+import "../auth.css";
 const AuthLayout = ({ leftContent }) => {
   return (
     <>
@@ -21,7 +21,7 @@ const AuthLayout = ({ leftContent }) => {
        md:w-[80%] md:p-4 p-0"
         >
           <div className="relative z-10 bg-[url('/images/auth.webp')] bg-cover bg-center w-[50%] min-h-full rounded-xl  border-accent lg:flex items-center hidden ">
-            <div className="absolute inset-0 bg-[#050e37a8] h-full rounded-xl"></div>
+            <div className="absolute inset-0 bg-[#132579a8] h-full rounded-xl"></div>
             {leftContent}
           </div>
           <div className="lg:w-[45%] w-full  mx-auto">
